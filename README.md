@@ -4,7 +4,6 @@
 
 ![App Screenshot](https://wajrock.github.io/portfolio/assets/projects/keops.jpg)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 
 ## PRESENTATION DU JEU
