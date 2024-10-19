@@ -13,23 +13,23 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
 
         self.dict_map = {
-            'map' : pytmx.util_pygame.load_pygame('../tmx/map.tmx', pixel_alpha = True),  
-            'pyr' : pytmx.util_pygame.load_pygame('../tmx/pyr.tmx', pixel_alpha = True),  
-            'trappe' : pytmx.util_pygame.load_pygame('../tmx/trappe.tmx', pixel_alpha = True),  
-            'cave' : pytmx.util_pygame.load_pygame('../tmx/cave.tmx', pixel_alpha = True),  
-            'housecave' : pytmx.util_pygame.load_pygame('../tmx/housecave.tmx', pixel_alpha = True),  
-            'house' : pytmx.util_pygame.load_pygame('../tmx/house.tmx', pixel_alpha = True),  
-            'boat' : pytmx.util_pygame.load_pygame('../tmx/boat.tmx', pixel_alpha = True),  
-            'inboat' : pytmx.util_pygame.load_pygame('../tmx/inboat.tmx', pixel_alpha = True),  
-            'trou' : pytmx.util_pygame.load_pygame('../tmx/trou.tmx', pixel_alpha = True) ,
-            'trou2' : pytmx.util_pygame.load_pygame('../tmx/trou2.tmx', pixel_alpha = True), 
-            'tresor' : pytmx.util_pygame.load_pygame('../tmx/tresor.tmx', pixel_alpha = True),
-            'loti' : pytmx.util_pygame.load_pygame('../tmx/loti.tmx', pixel_alpha = True), 
-            'farm1' : pytmx.util_pygame.load_pygame('../tmx/farm1.tmx', pixel_alpha = True),
-            'farm2' : pytmx.util_pygame.load_pygame('../tmx/farm2.tmx', pixel_alpha = True),
-            'farm3' : pytmx.util_pygame.load_pygame('../tmx/farm3.tmx', pixel_alpha = True),
-            'farmetage' : pytmx.util_pygame.load_pygame('../tmx/farmetage.tmx', pixel_alpha = True),
-            'maisonnette' : pytmx.util_pygame.load_pygame('../tmx/maisonnette.tmx', pixel_alpha = True)
+            'map' : pytmx.util_pygame.load_pygame('./tmx/map.tmx', pixel_alpha = True),  
+            'pyr' : pytmx.util_pygame.load_pygame('./tmx/pyr.tmx', pixel_alpha = True),  
+            'trappe' : pytmx.util_pygame.load_pygame('./tmx/trappe.tmx', pixel_alpha = True),  
+            'cave' : pytmx.util_pygame.load_pygame('./tmx/cave.tmx', pixel_alpha = True),  
+            'housecave' : pytmx.util_pygame.load_pygame('./tmx/housecave.tmx', pixel_alpha = True),  
+            'house' : pytmx.util_pygame.load_pygame('./tmx/house.tmx', pixel_alpha = True),  
+            'boat' : pytmx.util_pygame.load_pygame('./tmx/boat.tmx', pixel_alpha = True),  
+            'inboat' : pytmx.util_pygame.load_pygame('./tmx/inboat.tmx', pixel_alpha = True),  
+            'trou' : pytmx.util_pygame.load_pygame('./tmx/trou.tmx', pixel_alpha = True) ,
+            'trou2' : pytmx.util_pygame.load_pygame('./tmx/trou2.tmx', pixel_alpha = True), 
+            'tresor' : pytmx.util_pygame.load_pygame('./tmx/tresor.tmx', pixel_alpha = True),
+            'loti' : pytmx.util_pygame.load_pygame('./tmx/loti.tmx', pixel_alpha = True), 
+            'farm1' : pytmx.util_pygame.load_pygame('./tmx/farm1.tmx', pixel_alpha = True),
+            'farm2' : pytmx.util_pygame.load_pygame('./tmx/farm2.tmx', pixel_alpha = True),
+            'farm3' : pytmx.util_pygame.load_pygame('./tmx/farm3.tmx', pixel_alpha = True),
+            'farmetage' : pytmx.util_pygame.load_pygame('./tmx/farmetage.tmx', pixel_alpha = True),
+            'maisonnette' : pytmx.util_pygame.load_pygame('./tmx/maisonnette.tmx', pixel_alpha = True)
         }
 
         # definit vers où va le joueur
@@ -39,35 +39,35 @@ class Player(pygame.sprite.Sprite):
         self.count_move = 0
         # MARCHE ------------------
         self.down_images = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_f1.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_f2.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_f0.png').convert_alpha(), (16,20))       
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_f1.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_f2.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_f0.png').convert_alpha(), (16,20))       
         ]
         self.right_images = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_r1.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_r2.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_r0.png').convert_alpha(), (16,20))
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_r1.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_r2.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_r0.png').convert_alpha(), (16,20))
         ] 
         self.left_images = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_l1.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_l2.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_l0.png').convert_alpha(), (16,20))
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_l1.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_l2.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_l0.png').convert_alpha(), (16,20))
         ]
         self.up_images = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_b1.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_b2.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/marche/player_b0.png').convert_alpha(), (16,20))
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_b1.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_b2.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/marche/player_b0.png').convert_alpha(), (16,20))
         ] 
         # NAGE ------------------
         self.down_images_nage = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_f1.png').convert_alpha(), (16,20)),
-            pygame.transform.flip(pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_f1.png').convert_alpha(), (16,20)), 1, 0),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_f0.png').convert_alpha(), (16,20))       
+            pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_f1.png').convert_alpha(), (16,20)),
+            pygame.transform.flip(pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_f1.png').convert_alpha(), (16,20)), 1, 0),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_f0.png').convert_alpha(), (16,20))       
         ]
         self.left_images_nage = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_l1.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_l2.png').convert_alpha(), (16,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_l0.png').convert_alpha(), (16,20))
+            pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_l1.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_l2.png').convert_alpha(), (16,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_l0.png').convert_alpha(), (16,20))
         ]
         self.right_images_nage = [
             pygame.transform.flip(self.left_images_nage[0], 1, 0),
@@ -75,20 +75,20 @@ class Player(pygame.sprite.Sprite):
             pygame.transform.flip(self.left_images_nage[2], 1, 0)
         ] 
         self.up_images_nage = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_b1.png').convert_alpha(), (16,20)),
-            pygame.transform.flip(pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_b1.png').convert_alpha(), (16,20)), 1, 0),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/nage/player_n_b0.png').convert_alpha(), (16,20))
+            pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_b1.png').convert_alpha(), (16,20)),
+            pygame.transform.flip(pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_b1.png').convert_alpha(), (16,20)), 1, 0),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/nage/player_n_b0.png').convert_alpha(), (16,20))
         ] 
         # BIKE ------------------
         self.down_images_bike = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_f1.png').convert_alpha(), (16,20)),
-            pygame.transform.flip(pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_f1.png').convert_alpha(), (16,20)), 1, 0),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_f0.png').convert_alpha(), (16,20))       
+            pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_f1.png').convert_alpha(), (16,20)),
+            pygame.transform.flip(pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_f1.png').convert_alpha(), (16,20)), 1, 0),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_f0.png').convert_alpha(), (16,20))       
         ]
         self.left_images_bike = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_l1.png').convert_alpha(), (22,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_l2.png').convert_alpha(), (22,20)),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_l0.png').convert_alpha(), (22,20))
+            pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_l1.png').convert_alpha(), (22,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_l2.png').convert_alpha(), (22,20)),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_l0.png').convert_alpha(), (22,20))
         ]
         self.right_images_bike = [
             pygame.transform.flip(self.left_images_bike[0], 1, 0),
@@ -96,9 +96,9 @@ class Player(pygame.sprite.Sprite):
             pygame.transform.flip(self.left_images_bike[2], 1, 0) 
         ] 
         self.up_images_bike = [
-            pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_b1.png').convert_alpha(), (16,20)),
-            pygame.transform.flip(pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_b1.png').convert_alpha(), (16,20)), 1, 0),
-            pygame.transform.scale(pygame.image.load('../assets/pnj/velo/player_b_b0.png').convert_alpha(), (16,20))
+            pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_b1.png').convert_alpha(), (16,20)),
+            pygame.transform.flip(pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_b1.png').convert_alpha(), (16,20)), 1, 0),
+            pygame.transform.scale(pygame.image.load('./assets/pnj/velo/player_b_b0.png').convert_alpha(), (16,20))
         ] 
         self.go_velo = False
         self.mode = 'marche'

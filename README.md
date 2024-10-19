@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![App Screenshot](/cover.jpg)
+![App Screenshot](https://wajrock.me/projects/keops/cover.webp)
 
 
 ## Introduction
@@ -48,14 +48,14 @@ Enjoy the adventure and best of luck on your escape!
 
 ## Documentation
 
-For more detailed information about KEOPS, including game mechanics, tips, and troubleshooting, please refer to the official [documentation](https://linktodocumentation).
+For more detailed information about KEOPS, including game mechanics, tips, and troubleshooting, please refer to the official [documentation](https://wajrock.me/project/keops/documentation.pdf).
 
 
 ## License
 
-This project is created and maintained by [Thibaud Wajrock](https://wajrock.github.io/portfolio) and Mathis Lecoq. All rights reserved.
+This project is created and maintained by [Thibaud Wajrock](https://wajrock.me/) and Mathis Lecoq. All rights reserved.
 
 
 ## Feedback
 
-We value your feedback and suggestions! If you have any comments or need support, please reach out to us at [thibaud.wajrock@icloud.com](mailto:thibaud.wajrock@icloud.com).
+We value your feedback and suggestions! If you have any comments or need support, please reach out to us at [thibaud.wajrock@outlook.com](thibaud.wajrock@outlook.com).

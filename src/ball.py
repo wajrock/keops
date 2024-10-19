@@ -17,19 +17,19 @@ class Ball(pygame.sprite.Sprite):
         self.rond_central = (1880, 998)
         self.pos = [1880, 998]
         self.taille = [20, 20]
-        self.images = [pygame.transform.scale(pygame.image.load('../assets/football/ball.png').convert_alpha(), (self.taille[0], self.taille[1])),
-                        pygame.transform.scale(pygame.image.load('../assets/football/ball2.png').convert_alpha(), (self.taille[0], self.taille[1])),
-                        pygame.transform.scale(pygame.image.load('../assets/football/ball3.png').convert_alpha(), (self.taille[0], self.taille[1]))]
+        self.images = [pygame.transform.scale(pygame.image.load('./assets/football/ball.png').convert_alpha(), (self.taille[0], self.taille[1])),
+                        pygame.transform.scale(pygame.image.load('./assets/football/ball2.png').convert_alpha(), (self.taille[0], self.taille[1])),
+                        pygame.transform.scale(pygame.image.load('./assets/football/ball3.png').convert_alpha(), (self.taille[0], self.taille[1]))]
         self.image = self.images[self.anim%2]
         self.rect = self.image.get_rect()
         self.rect.center = (self.pos[0], self.pos[1])
         self.msg_rect = pygame.Rect(0,0,0,0)
 
         # MESSAGE
-        self.FONT150 = pygame.font.Font('../assets/fonts/font_goal.ttf', 150)
-        self.FONT55 = pygame.font.Font('../assets/fonts/Minecraft.ttf', 55)
-        self.FONT40 = pygame.font.Font('../assets/fonts/Minecraft.ttf', 40)
-        self.fond = pygame.transform.scale(pygame.image.load('../assets/football/fond_goal.png').convert_alpha(), (860*1.2, 241*1.1))
+        self.FONT150 = pygame.font.Font('./assets/fonts/font_goal.ttf', 150)
+        self.FONT55 = pygame.font.Font('./assets/fonts/Minecraft.ttf', 55)
+        self.FONT40 = pygame.font.Font('./assets/fonts/Minecraft.ttf', 40)
+        self.fond = pygame.transform.scale(pygame.image.load('./assets/football/fond_goal.png').convert_alpha(), (860*1.2, 241*1.1))
         self.fond_rect = self.fond.get_rect()
         self.fond_rect.center = (350, 350)
         self.fond.set_alpha(150)
@@ -166,7 +166,7 @@ class Ball(pygame.sprite.Sprite):
         self.msg_rect.x -= 10
 
     def draw_score(self, screen):
-        score= pygame.image.load("../assets/buttons/score.png").convert_alpha()
+        score= pygame.image.load("./assets/buttons/score.png").convert_alpha()
         score = pygame.transform.scale(score, (score.get_size()[0]/1.8, score.get_size()[1]/1.8))
         score_rect = score.get_rect()
         score_rect.center = (350, 95)

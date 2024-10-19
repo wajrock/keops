@@ -19,22 +19,22 @@ class Game:
         # INITIALISATION FENETRE
         self.screen = pygame.display.set_mode((700,700))
         pygame.display.set_caption('KEOPS - Escape Game')
-        self.icon = pygame.image.load('../assets/others/icone.png')
+        self.icon = pygame.image.load('./assets/others/icone.png')
         pygame.display.set_icon(self.icon)
 
         # CHARGEMENT
         self.c = False
     
         # FONDS ECRAN
-        self.background = pygame.image.load("../assets/backgrounds/background.png").convert()
-        self.background_succes = pygame.image.load("../assets/backgrounds/success_background.png").convert()
-        self.background_options = pygame.image.load("../assets/backgrounds/options.png").convert()
-        self.carte = pygame.image.load("../assets/gps/map.png").convert()
+        self.background = pygame.image.load("./assets/backgrounds/background.png").convert()
+        self.background_succes = pygame.image.load("./assets/backgrounds/success_background.png").convert()
+        self.background_options = pygame.image.load("./assets/backgrounds/options.png").convert()
+        self.carte = pygame.image.load("./assets/gps/map.png").convert()
         self.carte = pygame.transform.scale(self.carte, (self.carte.get_size()[0]/2, self.carte.get_size()[1]/2))
         self.carte_rect = self.carte.get_rect()
         self.carte_mid = (self.carte.get_size()[0]/2, self.carte.get_size()[1]/2)
         self.coord_player = [0,0]
-        self.pin = pygame.image.load("../assets/gps/pin.png").convert_alpha()
+        self.pin = pygame.image.load("./assets/gps/pin.png").convert_alpha()
         self.pin = pygame.transform.scale(self.pin, (self.pin.get_size()[0]/10, self.pin.get_size()[1]/10))
         self.pin_rect = self.pin.get_rect()
         self.pin_pos = [1600, 0]
@@ -42,18 +42,18 @@ class Game:
         self.trajet = False
 
         # TRAJET
-        self.montre = pygame.image.load("../assets/gps/phone.png").convert_alpha()
+        self.montre = pygame.image.load("./assets/gps/phone.png").convert_alpha()
         self.montre = pygame.transform.scale(self.montre, (self.montre.get_size()[0]/3, self.montre.get_size()[1]/3))
         self.montre_rect = self.montre.get_rect()
         self.montre_rect.bottomleft = (10, 625)
-        self.fleche = pygame.transform.scale(pygame.image.load('../assets/gps/green_arrow.png').convert_alpha(), (60,60))
+        self.fleche = pygame.transform.scale(pygame.image.load('./assets/gps/green_arrow.png').convert_alpha(), (60,60))
         self.fleche_rect = self.fleche.get_rect()  
         self.angle = 90  
         self.anim_montre = False
 
         #AFFICHAGE BULLE TEXTE
-        self.bubble = pygame.image.load("../assets/texts/dialog.png")
-        self.indic = pygame.image.load("../assets/texts/dialog1.png")
+        self.bubble = pygame.image.load("./assets/texts/dialog.png")
+        self.indic = pygame.image.load("./assets/texts/dialog1.png")
 
         #INITIALISATION COULEURS BOUTTONS
         self.color_play_button,self.color_options_button,self.color_quit_button,self.color_pause_play_button,self.color_pause_options_button,self.color_pause_quit_button,self.color_succes_button = 7*[(255, 255, 255)]
@@ -138,8 +138,8 @@ class Game:
         self.keys_final = [pygame.K_0,pygame.K_1,pygame.K_2,pygame.K_3,pygame.K_4,pygame.K_5,pygame.K_6,pygame.K_7,pygame.K_8,pygame.K_9]
 
         # MOUSE
-        self.cursor = [pygame.transform.scale(pygame.image.load('../assets/others/cursor1.png').convert_alpha(), (10,10)), 
-                       pygame.transform.scale(pygame.image.load('../assets/others/cursor2.png').convert_alpha(), (10,10))]
+        self.cursor = [pygame.transform.scale(pygame.image.load('./assets/others/cursor1.png').convert_alpha(), (10,10)), 
+                       pygame.transform.scale(pygame.image.load('./assets/others/cursor2.png').convert_alpha(), (10,10))]
         self.cursor_rect = self.cursor[0].get_rect()
 
         self.parchment_open = False
@@ -430,7 +430,7 @@ class Game:
             self.player.new_world(self.map.name)
             
     def font_render(self,font,size):
-        font_render = pygame.font.Font('../assets/fonts/'+font+'.ttf',size)
+        font_render = pygame.font.Font('./assets/fonts/'+font+'.ttf',size)
         return font_render      
 
     def display_message(self,font,text,font_size,x,y,color):
@@ -450,9 +450,9 @@ class Game:
         else: taille = 1.8
         # BOUTON AVEC 2EME IMG
         if button not in ['level', 'touches']:
-            im = pygame.image.load("../assets/buttons/"+button+"_button"+self.hover[button]+".png")
+            im = pygame.image.load("./assets/buttons/"+button+"_button"+self.hover[button]+".png")
         else:
-            im = pygame.image.load("../assets/buttons/"+button+"_button.png")
+            im = pygame.image.load("./assets/buttons/"+button+"_button.png")
         im = pygame.transform.scale(im, (im.get_size()[0]/taille, im.get_size()[1]/taille))
         rect = im.get_rect()
         # COORD
@@ -486,7 +486,7 @@ class Game:
         # BACKGROUND
         if pause:
             self.screen.blit(self.screenshot, (0,0))
-            self.print_image("../assets/texts/logo_keops.png",self.screen.get_size()[0]/2,200)
+            self.print_image("./assets/texts/logo_keops.png",self.screen.get_size()[0]/2,200)
         else:
             self.screen.blit(self.background, (0,0))
         # BUTTON
@@ -499,15 +499,15 @@ class Game:
         self.screen.blit(self.background_succes, (0,0))
         # BUTTON
         if hover:
-            self.quit_button = self.draw_button(self.succes_rect,self.color_succes_button,'../assets/buttons/quit_button1.png')
+            self.quit_button = self.draw_button(self.succes_rect,self.color_succes_button,'./assets/buttons/quit_button1.png')
         else:
-            self.quit_button = self.draw_button(self.succes_rect,self.color_succes_button,'../assets/buttons/quit_button.png')
+            self.quit_button = self.draw_button(self.succes_rect,self.color_succes_button,'./assets/buttons/quit_button.png')
 
     def init_intro(self,time):
         fade_time = 0.5
         type_fade = lambda x: x  # Linear
 
-        logo = pygame.image.load('../assets/texts/logo.png')
+        logo = pygame.image.load('./assets/texts/logo.png')
         logo_size = logo.get_rect(center=(700 / 2, 700 / 2))
         
         time -= fade_time   
@@ -552,17 +552,17 @@ class Game:
         Init bouton time et pause ds le jeu
         '''
         # PAUSE
-        self.pause = pygame.image.load("../assets/buttons/pause"+hover['pause']+".png")
+        self.pause = pygame.image.load("./assets/buttons/pause"+hover['pause']+".png")
         self.pause = pygame.transform.scale(self.pause, (self.pause.get_size()[0]/3, self.pause.get_size()[1]/3))
         self.pause_button = self.pause.get_rect()
         self.pause_button.center = (630,30)
         # TIME 
-        self.time = pygame.image.load("../assets/buttons/time"+hover['time']+".png")
+        self.time = pygame.image.load("./assets/buttons/time"+hover['time']+".png")
         self.time = pygame.transform.scale(self.time, (self.time.get_size()[0]/3, self.time.get_size()[1]/3))
         self.time_button = self.time.get_rect()
         self.time_button.center = (90,30)
 
-        self.time_large = pygame.image.load("../assets/buttons/time_big.png")
+        self.time_large = pygame.image.load("./assets/buttons/time_big.png")
         self.time_large = pygame.transform.scale(self.time_large, (self.time_large.get_size()[0]/2, self.time_large.get_size()[1]/2))
         self.time_large_button = self.time_large.get_rect()
         self.time_large_button.center = (self.screen.get_size()[0]/2,130)
@@ -753,7 +753,7 @@ class Game:
         self.pirate_message = [(self.font_render('REDENSEK',40)).render(text, True, (0, 0, 0)) for text in self.pirate_m]
 
         if pressed[pygame.K_h]:
-            self.print_image("../assets/quetes/quete 2 - bateau/help.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+            self.print_image("./assets/quetes/quete 2 - bateau/help.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
         if collid:
             if not self.indice_pirate:
                 self.screen.blit(self.bubble,(self.screen.get_size()[0]/2-(self.bubble.get_size()[0])/2,500))
@@ -774,7 +774,7 @@ class Game:
 
         #AFFICHE SOLUTION SI COLLISION ET INDICE TRUE
         if collid and self.indice_pirate:
-            self.print_image("../assets/quetes/quete 2 - bateau/indice_pirate.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+            self.print_image("./assets/quetes/quete 2 - bateau/indice_pirate.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
     def grab(self,pressed,element):
         if element == 'banana':
@@ -814,7 +814,7 @@ class Game:
                 self.indice_renard_1 = True
             
             if not self.grab(pressed,'banana') and self.indice_renard_1:
-                self.print_image("../assets/quetes/quete 3 - renard/translate.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                self.print_image("./assets/quetes/quete 3 - renard/translate.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
         #SI LE JOUEUR A LES BANANES
         if self.grab(pressed,'banana') and not self.indice_renard_2:
@@ -846,7 +846,7 @@ class Game:
         #AFFICHE LA SOLUTION QUAND LE RENARD A FINIT DE PARLER
         if self.indice_renard_2 and self.grsab(pressed,'banana'):
                 self.index_seconde_quete = 0
-                self.print_image("../assets/quetes/quete 3 - renard/indice_banana.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                self.print_image("./assets/quetes/quete 3 - renard/indice_banana.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
       
     def quete_yoda(self):
         pressed = pygame.key.get_pressed()
@@ -896,7 +896,7 @@ class Game:
                     self.indice_yoda_1 = True
 
         if self.indice_yoda_1 and self.grab(pressed,'potion'):
-                self.print_image("../assets/quetes/quete 4 - yoda/indice_wizard.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                self.print_image("./assets/quetes/quete 4 - yoda/indice_wizard.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
     def final_quete(self):
             pressed = pygame.key.get_pressed()
@@ -927,70 +927,70 @@ class Game:
             if self.quizz:
                 #QUESTION 1
                 if not self.quizz_reponse[0]:
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/1.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/1.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_2]:
                         self.quizz_reponse[0] = True
 
                 #QUESTION 2
                 if (not self.quizz_reponse[1]) and (self.quizz_reponse[0]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/2.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/2.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_2]:
                         self.quizz_reponse[1] = True
 
                 #QUESTION 3
                 if (not self.quizz_reponse[2]) and (self.quizz_reponse[1]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/3.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/3.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_3]:
                         self.quizz_reponse[2] = True
                 
                 #QUESTION 4
                 if (not self.quizz_reponse[3]) and (self.quizz_reponse[2]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/4.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/4.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_2]:
                         self.quizz_reponse[3] = True
                 
                 #QUESTION 5
                 if (not self.quizz_reponse[4]) and (self.quizz_reponse[3]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/5.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/5.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_3]:
                         self.quizz_reponse[4] = True
 
                 #QUESTION 6
                 if (not self.quizz_reponse[5]) and (self.quizz_reponse[4]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/6.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/6.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_2]:
                         self.quizz_reponse[5] = True
 
                 #QUESTION 7
                 if (not self.quizz_reponse[6]) and (self.quizz_reponse[5]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/7.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/7.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_1]:
                         self.quizz_reponse[6] = True
 
                 #QUESTION 8
                 if (not self.quizz_reponse[7]) and (self.quizz_reponse[6]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/8.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/8.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_1]:
                         self.quizz_reponse[7] = True
                 
                 #QUESTION 9
                 if (not self.quizz_reponse[8]) and (self.quizz_reponse[7]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/9.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/9.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_2]:
                         self.quizz_reponse[8] = True
                 
                 #QUESTION 10
                 if (not self.quizz_reponse[9]) and (self.quizz_reponse[8]):
-                    self.print_image("../assets/quetes/quete 5 - final/quizz/10.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 5 - final/quizz/10.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
 
                     if pressed[pygame.K_2]:
                         self.quizz_reponse[9] = True
@@ -1064,7 +1064,7 @@ class Game:
             #     self.parchment_open = True
 
             # if 5<=self.player.feet.x<20 and 129<self.player.feet.y<=138 and self.parchment_open :    
-            #     self.print_image("../assets/quetes/quete 1 - sage/table.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+            #     self.print_image("./assets/quetes/quete 1 - sage/table.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
                 
             if self.player.feet.colliderect(self.map.PARCHEMIN.rect) :
                 if not self.parchment_open: 
@@ -1073,16 +1073,16 @@ class Game:
                     if pressed[pygame.K_v] :
                         self.parchment_open = True
                 else:
-                    self.print_image("../assets/quetes/quete 1 - sage/table.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
+                    self.print_image("./assets/quetes/quete 1 - sage/table.png",self.screen.get_size()[0]/2,self.screen.get_size()[0]/2)
             else: 
                 self.teleportation = True
 
     def take_screenshot(self):
-        pygame.image.save(self.screen,"../assets/backgrounds/screenshot.png")
-        OriImage = Image.open('../assets/backgrounds/screenshot.png')
+        pygame.image.save(self.screen,"./assets/backgrounds/screenshot.png")
+        OriImage = Image.open('./assets/backgrounds/screenshot.png')
         self.screenshot = OriImage.filter(ImageFilter.GaussianBlur(radius=10))
-        self.screenshot.save("../assets/backgrounds/screenshot.png")
-        self.screenshot = pygame.image.load("../assets/backgrounds/screenshot.png")
+        self.screenshot.save("./assets/backgrounds/screenshot.png")
+        self.screenshot = pygame.image.load("./assets/backgrounds/screenshot.png")
 
     def carte_pos(self, pause):
         '''
@@ -1101,7 +1101,7 @@ class Game:
         #carte 
         if not pause:
             # RECHARGE MAP
-            self.carte = pygame.image.load("../assets/gps/map.png").convert()
+            self.carte = pygame.image.load("./assets/gps/map.png").convert()
             self.carte = pygame.transform.scale(self.carte, (self.carte.get_size()[0]/2, self.carte.get_size()[1]/2))
             self.carte_rect.center = (self.screen.get_size()[0]/2, self.screen.get_size()[0]/2)
             self.carte_rect.x += self.carte_mid[0]-coord[0]
@@ -1112,7 +1112,7 @@ class Game:
             
         self.screen.blit(self.carte, self.carte_rect)
         #rect
-        self.keops_carte = pygame.image.load("../assets/buttons/keops_map.png").convert_alpha()
+        self.keops_carte = pygame.image.load("./assets/buttons/keops_map.png").convert_alpha()
         self.keops_carte = pygame.transform.scale(self.keops_carte, (self.keops_carte.get_size()[0]/2, self.keops_carte.get_size()[1]/2))
         self.keops_carte_rect = self.keops_carte.get_rect()
         self.keops_carte_rect.center = (self.screen.get_size()[0]/2, 50)
@@ -1121,7 +1121,7 @@ class Game:
         #pin
         if self.pin_pos[0] < 1600:
             self.trajet = True
-            self.montre = pygame.image.load("../assets/gps/phone.png").convert_alpha()
+            self.montre = pygame.image.load("./assets/gps/phone.png").convert_alpha()
             self.montre = pygame.transform.scale(self.montre, (self.montre.get_size()[0]/3, self.montre.get_size()[1]/3))
             self.montre_rect.bottomleft = (10, 690)
         self.pin_rect.midbottom = (self.pin_pos[0]+self.carte_rect.x, self.pin_pos[1]+self.carte_rect.y)
@@ -1144,7 +1144,7 @@ class Game:
         # DISTANCE
         d = int(numpy.sqrt(x**2+y**2)/5)
         if d < 2:
-            self.montre = pygame.image.load("../assets/gps/phone_end.png").convert_alpha()
+            self.montre = pygame.image.load("./assets/gps/phone_end.png").convert_alpha()
             self.montre = pygame.transform.scale(self.montre, (self.montre.get_size()[0]/3, self.montre.get_size()[1]/3))
             self.screen.blit(self.montre, self.montre_rect)
             self.anim_montre = True
@@ -1171,7 +1171,7 @@ class Game:
         page_menu = 'menu'
         jeu = False
         
-        mixer.music.load('../assets/audio/audio2.mp3')
+        mixer.music.load('./assets/audio/audio2.mp3')
         mixer.music.play(-1)
         mixer.music.set_volume(0.3)
         mixer.music.pause()
