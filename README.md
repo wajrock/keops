@@ -1,10 +1,5 @@
 # KEOPS - ESCAPE GAME
 
-## Screenshots
-
-![App Screenshot](https://wajrock.me/projects/keops/cover.webp)
-
-
 ## Introduction
 Welcome to KEOPS, an immersive escape game experience set in an alternate universe inspired by the Great Pyramid of Giza, also known as the Pyramid of Khufu or Keops. Your objective: escape this mysterious world by solving puzzles and deciphering a secret code. Test your wits and embark on a thrilling adventure!
 
